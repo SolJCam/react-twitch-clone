@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { signIn, signOut } from "../actions";
 
 class GoogleAuth extends React.Component {
-    state = { isSignedIn: null };
 
     componentDidMount() {
         // the gapi object is made accessible by creating this project on Google Cloud Platform and adding
@@ -16,7 +15,7 @@ class GoogleAuth extends React.Component {
                 scope: 'email' //merely tells us what parts of the users profile/account we want access to
             }).then(()=>{       // give the app access to the users authentication status
                 this.auth = window.gapi.auth2.getAuthInstance();
-                this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+                this.onAuthChange(this.auth.isSignedIn.get());
                 this.auth.isSignedIn.listen(this.onAuthChange);
             });
         });
@@ -39,9 +38,9 @@ class GoogleAuth extends React.Component {
     }
 
     renderAuthButton() {
-        if(this.state.isSignedIn === null){
+        if(this.props.isSignedIn === null){
             return null;
-        }else if(this.state.isSignedIn){
+        }else if(this.props.isSignedIn){
             return(
                 <button className="ui red google button" onClick={ this.toSignOut }>
                     <i className="google icon" />
@@ -65,7 +64,11 @@ class GoogleAuth extends React.Component {
     };
 };
 
+const mapStateToProps = (state) => {
+    return { isSignedIn: state.auth.isSignedIn };
+}
+
 export default connect(
-    null,
+    mapStateToProps,
     { signIn, signOut }
 )(GoogleAuth);
