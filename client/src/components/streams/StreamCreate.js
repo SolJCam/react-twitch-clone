@@ -13,7 +13,9 @@ class StreamCreate extends React.Component {
             );
         };
     };
-    renderInput = ({ input, label, meta }) => {    {/* desctructure out the props object to access onChange Event Handler and Input Value which are REQUIRED FOR ANY REACT input ele */}
+    
+    // desctructure out the props object to access onChange Event Handler and Input Value which are REQUIRED FOR ANY REACT input ele
+    renderInput = ({ input, label, meta }) => {    
         // console.log(input);
         const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
 
@@ -26,8 +28,8 @@ class StreamCreate extends React.Component {
         );
     }
 
-    onSubmit (formValues) {
-        console.log(formValues);
+    onSubmit = formValues => {
+        this.props.createStream(formValues);
     }
     
     render () {
@@ -55,7 +57,10 @@ const validate = formValues => {
     return errors;
 }
 
-export default reduxForm({
+const formWrapped = reduxForm({
     form: 'streamCreate',
     validate
 })(StreamCreate);
+
+// Yes cnnect and reduxForm essentially do the same thing. here we're nesting them for the purposes of this project
+export default connect(null, { createStream })(formWrapped)
