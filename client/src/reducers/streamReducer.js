@@ -1,8 +1,10 @@
 import _ from 'lodash';
 
 // the [] used in the following code is not the use of an array; this syntax is called key interpolaton 
-export default (state={}, action) => {
+const streamReducer = (state={}, action) => {
     switch (action.type) {
+        case "FETCH_STREAMS":
+            return { ...state, ..._.mapKeys(action.payload, 'id') };
         case "FETCH_STREAM":
             return { ...state, [action.payload.id]: action.payload };
         case "CREATE_STREAM":
@@ -15,3 +17,5 @@ export default (state={}, action) => {
             return state;
     }
 } 
+
+export default streamReducer;
