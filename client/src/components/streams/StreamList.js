@@ -9,9 +9,15 @@ class StreamList extends React.Component {
 
     render(){
         return(
+            console.log(this.props.streams),
             <div>StreamList</div>
         );
     };
 }
 
-export default connect(null, { fetchStreams })(StreamList);
+const mapStateToProps = state => {
+        // takes an object and pulls out all the values which it then saves to an array. An array would simply be easier to work w/
+    return{ streams: Object.values(state.streams) };
+}
+
+export default connect(mapStateToProps, { fetchStreams })(StreamList);
