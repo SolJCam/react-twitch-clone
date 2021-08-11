@@ -19,6 +19,18 @@
       "title": "ok",
       "description": "streamer",
       "id": 4
+    },
+    {
+      "title": "ok new stream",
+      "description": "new stream to show edit/delete buttons",
+      "userId": "110618274801822009730",
+      "id": 5
+    },
+    {
+      "title": "ok new stream",
+      "description": "new stream to show edit/delete buttons",
+      "userId": "110618274801822009730",
+      "id": 6
     }
   ]
 }
