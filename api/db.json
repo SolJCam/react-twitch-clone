@@ -1,42 +1,10 @@
 {
   "streams": [
     {
-      "title": "streams",
-      "description": "streaming",
+      "title": "New Stream",
+      "description": "Streaming!!",
+      "userId": "110618274801822009730",
       "id": 1
-    },
-    {
-      "title": "new stream",
-      "description": "better stream",
-      "id": 2
-    },
-    {
-      "title": "ok",
-      "description": "streamer",
-      "id": 3
-    },
-    {
-      "title": "ok",
-      "description": "streamer",
-      "id": 4
-    },
-    {
-      "title": "ok new stream",
-      "description": "new stream to show edit/delete buttons",
-      "userId": "110618274801822009730",
-      "id": 5
-    },
-    {
-      "title": "ok new stream",
-      "description": "new stream to show edit/delete buttons",
-      "userId": "110618274801822009730",
-      "id": 6
-    },
-    {
-      "title": "testing histoy",
-      "description": "let's see if this works",
-      "userId": "110618274801822009730",
-      "id": 7
     }
   ]
 }
