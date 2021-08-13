@@ -18,5 +18,4 @@ class StreamCreate extends React.Component {
     };
 };
 
-// Yes cnnect and reduxForm essentially do the same thing. here we're nesting them for the purposes of this project
 export default connect(null, { createStream })(StreamCreate)

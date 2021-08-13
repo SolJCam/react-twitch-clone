@@ -55,6 +55,7 @@ const validate = formValues => {
     return errors;
 }
 
+// Connect and reduxForm effectively do the same thing
 const formWrapped = reduxForm({
     form: 'streamForm',
     validate
