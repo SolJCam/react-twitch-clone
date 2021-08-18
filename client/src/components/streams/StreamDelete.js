@@ -5,7 +5,8 @@ import history from '../../history';
 import { fetchStream } from '../../actions';
 
 class StreamDelete extends React.Component {
-    componenDidMount() {
+    componentDidMount() {
+        console.log(this.props);
         this.props.fetchStream(this.props.match.params.id);
     }
     
