@@ -1,12 +1,6 @@
 {
   "streams": [
     {
-      "title": "New Stream",
-      "description": "Streaming!!",
-      "userId": "110618274801822009730",
-      "id": 1
-    },
-    {
       "title": "Another stream",
       "description": "still streaming!!!...again...",
       "id": 2
