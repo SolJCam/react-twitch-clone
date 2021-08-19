@@ -10,6 +10,12 @@
       "title": "Another stream",
       "description": "still streaming!!!...again...",
       "id": 2
+    },
+    {
+      "title": "A New Stream",
+      "description": "Stream created at 12:18 AM 8/19",
+      "userId": "110618274801822009730",
+      "id": 3
     }
   ]
 }
