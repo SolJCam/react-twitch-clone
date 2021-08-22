@@ -22,7 +22,11 @@ class StreamShow extends React.Component {
         const { id } = this.props.match.params;
         
         this.buildPlayer(id);
-    }
+    };
+
+    componentWillUnmount() {
+        this.player.destroy();
+    };
 
     buildPlayer(id) {
         if(this.player || !this.props.stream) {
@@ -35,7 +39,7 @@ class StreamShow extends React.Component {
         });
         this.player.attachMediaElement(this.videoRef.current);
         this.player.load();
-    }
+    };
 
     render(){
         if(!this.props.stream){
